@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Server Form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="/createForm.html">Create</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/updateForm.html">Update</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/deleteForm.html">Delete</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="contact-clean">
+        <form method="post" action="/add">
+            <h2 class="text-center">Hey!! Enter your Info here</h2>
+            <div class="form-group"><input class="form-control" type="text" name="firstName" placeholder="First Name" required=""></div>
+            <div class="form-group"><input class="form-control" type="text" name="lastName" placeholder="Last Name" required=""></div>
+            <div class="form-group"><input class="form-control" type="text" name="regNumber" placeholder="Registration Number" required=""><button class="btn btn-primary" type="submit">create</button></div>
+        </form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,11 @@ const sql = require ('mysql');
 
 const app = express();
 
-const port = process.env.PORT || 6000;
+const path = require('path');
+
+app.use(express.static(path.join(__dirname,'views')))
+
+const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
@@ -27,8 +31,23 @@ con.connect((err) =>{
 })
 
 app.get('/', (req,res) =>{
-    res.send('In Home Page');
+    res.sendFile(`${__dirname}/views/createForm.html`);
 });
+
+app.get('/update', (req,res) =>{
+    res.sendFile(`${__dirname}/views/updateForm.html`);
+});
+
+app.get('/delete', (req,res) =>{
+    res.sendFile(`${__dirname}/views/deleteForm.html`);
+});
+
+app.get('*', (req,res) =>{
+    res.sendFile(`${__dirname}/views/errorForm.html`);
+});
+
+
+
 
 app.post('/add', (req,res) => {
     try{
