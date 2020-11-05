@@ -118,7 +118,7 @@ app.patch('/update', (req,res) => {
     }
 });
 
-app.get('/readAll' , (req,res) => {
+app.post('/readAll' , (req,res) => {
     let query = 'SELECT * FROM student_info';
     con.query(query , (err,result) => {
         if(err) {
@@ -136,14 +136,15 @@ app.get('/readAll' , (req,res) => {
     })
 });
 
-app.delete('/delete', (req,res) => {
+app.post('/delete', (req,res) => {
+    console.log(req.body)
     try{
         if(req.body.firstName === undefined){
             throw 'Invalid Field';
         }
         else{
             let query = 'DELETE FROM student_info WHERE firstName="'+req.body.firstName+'"';
-            con.query((err , result) => {
+            con.query(query,(err , result) => {
                 if(err) {
                     console.log(err);
                     res.status(503).json({
